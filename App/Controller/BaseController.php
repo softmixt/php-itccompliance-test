@@ -25,6 +25,9 @@ class BaseController
 	 */
 	protected ApiInterface $api;
 	
+	/**
+	 * @var mixed
+	 */
 	protected mixed $itc;
 	
 	public function __construct()
