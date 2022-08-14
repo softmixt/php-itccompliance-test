@@ -1,0 +1,28 @@
+{
+  "name": "adrian/php-itccompliance-test",
+  "description": "ITC Adrian PHP Test",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "App/",
+      "Framework\\": "Framework/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "^9.5",
+    "twig/twig": "^2.0",
+    "ext-curl": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Baghina Radu Adrian",
+      "email": "softmixt@gmail.com"
+    }
+  ]
+}
