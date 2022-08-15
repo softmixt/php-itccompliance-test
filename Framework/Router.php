@@ -40,13 +40,13 @@ class Router
 	 *
 	 * @return void
 	 */
-/*	public static function post($route, $callback): void
+	public static function post($route, $callback): void
 	{
 		if (strcasecmp($_SERVER['REQUEST_METHOD'], Request::POST) !== 0) {
 			return;
 		}
 		self::$routes[$route] = $callback;
-	}*/
+	}
 	
 	/**
 	 * @param $routeKey
