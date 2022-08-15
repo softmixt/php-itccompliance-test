@@ -9,6 +9,8 @@
 namespace App\Lib\Api;
 
 
+use Error;
+
 class Api implements ApiInterface
 {
 	
@@ -24,7 +26,15 @@ class Api implements ApiInterface
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		$data = curl_exec($ch);
+		
+		if (curl_errno($ch)) {
+			$error_msg = curl_error($ch);
+		}
 		curl_close($ch);
+		
+		if (isset($error_msg)) {
+			throw new Error($error_msg);
+		}
 		
 		return $data;
 	}

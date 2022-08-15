@@ -18,22 +18,6 @@ class Home extends BaseController
 	 */
 	public function indexAction()
 	{
-		/*		$api = $this->api->get('https://www.itccompliance.co.uk/recruitment-webservice/api/list');
-				$obj = json_decode($api);
-				print_r("<pre>");
-				print_r($obj->products->combgap);
-				print_r("</pre>");
-			
-				die();*/
-		
-		/*	$allData = $this->itc->getall();
-			
-			print_r("<pre>");
-			print_r($allData);
-			print_r("</pre>");
-			die();*/
-		
-		
 		echo $this->templateEngine->render('pages/home/index.twig', ['title' => 'Home']);
 	}
 	

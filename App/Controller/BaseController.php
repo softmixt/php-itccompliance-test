@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use App\Lib\Api\ApiInterface;
 use App\Lib\TemplateEngine\EngineRegisterInterface;
+use App\Services\ItcComplianceServiceInterface;
 use Framework\ServiceContainer;
 
 class BaseController
@@ -28,7 +29,7 @@ class BaseController
 	/**
 	 * @var mixed
 	 */
-	protected mixed $itc;
+	protected ItcComplianceServiceInterface $itc;
 	
 	public function __construct()
 	{

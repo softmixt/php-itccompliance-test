@@ -1,0 +1,41 @@
+{% extends 'layouts/main.twig' %}
+{% set page_title = title %}
+
+{% block content %}
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal">{{ title }}</h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-12">
+        {% if product.error %}
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    {{ product.error }}
+                </div>
+            </div>
+        {% endif %}
+        {% if product.data %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">{{ product.data.name|e }}</h5>
+                            <span class="badge text-bg-info">{{ product.data.type|e }}</span>
+                        </div>
+                        <p class="text-mutter">{{ product.data.description|e }}</p>
+
+                        <hr class="my-3"/>
+
+                        <small class="text-mutter">Suppliers:</small>
+                        {% if product.data.suppliers %}
+                            <ul class="list-group list-group-flush list-group-numbered">
+                                {% for supplier in product.data.suppliers %}
+                                    <li class="list-group-item">{{ supplier|e }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
