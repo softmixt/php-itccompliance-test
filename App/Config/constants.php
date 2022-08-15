@@ -7,6 +7,6 @@
  */
 
 
-const ENVIRONMENT = 'development';
+const ENVIRONMENT = 'production';
 
 const IS_DEV = ENVIRONMENT == 'development';
